@@ -126,6 +126,23 @@
         settings:controller="com.android.settings.notification.VibrateWhenRingPreferenceController"
         android:order="-120"/>
 
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="ring_vibration_intensity"
+        android:title="@string/vibration_intensity_ringer"
+        android:dependency="vibrate_when_ringing"
+        android:defaultValue="2"
+        android:order="-127"
+        android:entries="@array/ringtone_vibration_intensity_entries"
+        android:entryValues="@array/ringtone_vibration_intensity_values" />
+
+    <com.evolution.settings.preference.SystemSettingListPreference
+        android:key="notification_vibration_intensity"
+        android:title="@string/vibration_intensity_notification"
+        android:defaultValue="2"
+        android:order="-125"
+        android:entries="@array/notification_vibration_intensity_entries"
+        android:entryValues="@array/notification_vibration_intensity_values" />
+
     <!-- Interruptions -->
     <com.android.settingslib.RestrictedPreference
         android:key="zen_mode"
@@ -262,6 +279,14 @@
           android:key="vibrate_on_touch"
           android:title="@string/vibrate_on_touch_title"
           settings:keywords="@string/keywords_vibrate_on_touch"/>
+
+        <com.evolution.settings.preference.SystemSettingListPreference
+          android:key="haptic_feedback_intensity"
+          android:title="@string/vibration_intensity_haptic"
+          android:dependency="vibrate_on_touch"
+          android:defaultValue="2"
+          android:entries="@array/ringtone_vibration_intensity_entries"
+          android:entryValues="@array/ringtone_vibration_intensity_values" />
 
         <!-- Dock speaker plays -->
         <DropDownPreference
